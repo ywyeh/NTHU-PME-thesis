@@ -1,0 +1,217 @@
+\documentclass{nthuthesis}
+
+% === Define Package
+\usepackage{times}
+\usepackage{verbatim}
+\usepackage{color}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{wallpaper}
+\usepackage{cite}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{siunitx}
+\usepackage{physics}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{hhline}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{floatrow}
+\usepackage{listings} % for highlight code
+\usepackage{titlesec}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{emptypage} % for twoside empty page after chapter if the page is not start from odd number
+\usepackage{titletoc}
+\usepackage{zhnumber} % for Chinese number
+\usepackage{svg}
+\usepackage{notoccite} % PREVENTS CITES IN CAPTIONS FROM MISNUMBERING YOUR REFERENCES
+
+% for algorithm
+\usepackage[algochapter,ruled,linesnumbered]{algorithm2e}
+
+% To customize item and enumerate
+\usepackage{enumitem}
+
+% to allow equation break the page
+\allowdisplaybreaks
+
+% \usepackage[hidelinks]{hyperref} % hyperlink for everything
+
+% setting for cleveref
+\usepackage{cleveref}
+\crefformat{figure}{圖~#2#1#3~}
+\crefformat{table}{表~#2#1#3~}
+\crefformat{equation}{~(#2#1#3)~式}
+\crefformat{algorithm}{演算法~#2#1#3~(Algorithm~#2#1#3)~}
+\crefformat{chapter}{第#2\zhnumber{#1}#3章}
+\crefformat{section}{~#2#1#3~節}
+\crefformat{subsection}{~#2#1#3~小節}
+\crefformat{appendix}{附錄~#2#1#3~}
+
+\floatsetup[table]{capposition=top}
+
+\makeatletter
+
+% Reinsert missing \algbackskip
+\def\algbackskip{\hskip-\ALG@thistlm}
+
+\providecommand\add@text{}
+\newcommand\tagaddtext[1]{%
+  \gdef\add@text{#1\gdef\add@text{}}}% 
+  
+\renewcommand\tagform@[1]{%
+  \maketag@@@{\llap{\add@text\quad}(\ignorespaces#1\unskip\@@italiccorr)}%
+}
+
+\makeatother
+
+
+
+% declare the path(s) where your graphic files are
+\graphicspath{{./figsrc/}}
+% and their extensions so you won't have to specify these with
+% every instance of \includegraphics
+% \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+
+% Using the tex-text mapping for ligatures etc.
+\defaultfontfeatures{Mapping=tex-text}
+
+% Set the default fonts
+
+% English font
+% Note: please refer to 'fc-list :outline -f "%{family}\n"' for choosing a valid font name
+\usepackage{fontspec}
+%\setmainfont{Times New Roman.ttf}
+\setmainfont{Times New Roman}
+
+% Chinese font
+% Note: please refer to 'fc-list :outline -f "%{family}\n"' for choosing a valid font name
+\setCJKmainfont[AutoFakeBold=3,AutoFakeSlant=.4]{kaiu.ttf}
+\setCJKmonofont[AutoFakeBold=3,AutoFakeSlant=.4]{kaiu.ttf}
+\defaultCJKfontfeatures{AutoFakeBold=6,AutoFakeSlant=.4}
+
+\CenterWallPaper{0.25}{nthu_logo_85.png}
+
+
+% Title Setting
+\titleformat{\chapter}
+  {\Large\bfseries\centering}
+  {第\,\zhnumber{\thechapter}\,章}{1em}{\Large}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {\thesection}{1em}{\large}
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {\thesubsection}{1em}{\normalsize}
+
+\titlespacing*{\chapter}{0pt}{-1.3cm}{0pt}
+\titlespacing*{\section}{0pt}{14pt}{0pt}
+\titlespacing*{\subsection}{0pt}{14pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{0pt}{0pt}
+
+% TOC setting
+\titlecontents{chapter}% <section-type>
+  [0pt]% <left>
+  {}% <above-code>
+  {\bfseries 第\zhnumber{\thecontentslabel}章\quad}% <numbered-entry-format>
+  {\bfseries}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+
+% 將英文標示改為中文
+\renewcommand{\contentsname}{目錄}
+\renewcommand{\listfigurename}{圖目錄}
+\renewcommand{\listtablename}{表目錄}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\captionsetup[figure]{labelsep=space}
+\captionsetup[subfigure]{font=normalsize}
+\captionsetup[table]{labelsep=space}
+
+% 行距設定
+\linespread{2.0}
+
+% Your information goes here
+\input{nthuvars}
+
+\begin{document}
+
+\frontmatter
+
+\newgeometry{top=1in,left=1in,bottom=1in,right=1in}
+\makecover
+\restoregeometry
+% \makecopyright
+
+
+% 電子檔著作權授權書
+% 紙本論文著作權授權書
+% 電子檔案上網授權書
+% 延後公開申請書
+% 指導教授推薦書
+% 考試委員審定書
+
+\makeatletter\@twosidefalse\@mparswitchfalse\makeatother
+
+\input{00_abstract}
+\input{00_acknowledgements}
+
+{
+\begin{spacing}{1.5}
+\tableofcontents
+
+\newpage
+% \phantomsection % for hyperref to correct the link
+\addcontentsline{toc}{chapter}{\listfigurename}
+\let\origaddvspace\addvspace
+% remove spacing between every chapter in list of figures and tables
+{\renewcommand{\addvspace}[1]{}\listoffigures}
+
+\newpage
+% \phantomsection % for hyperref to correct the link
+\addcontentsline{toc}{chapter}{\listtablename}
+{\renewcommand{\addvspace}[1]{}\listoftables}
+\end{spacing}
+}
+
+\mainmatter
+
+\makeatletter\@twosidetrue\@mparswitchtrue\makeatother
+
+% Your thesis goes here, add your own .tex file
+\input{01_introduction}
+% \input{02_problem_formulation}
+% \input{03_robot_localization_and_tracking}
+% \input{04_multi_robot_navigation}
+% \input{05_system_implement_and_result}
+% \input{06_conclusion}
+
+% do not use the hyphen in bibliography
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+\renewcommand{\bibname}{\Large\bfseries\centering{參考文獻}\vspace{10pt}}
+\cleardoublepage
+% \phantomsection % for hyperref to correct the link
+\addcontentsline{toc}{chapter}{參考文獻}
+\bibliographystyle{IEEEtran_rchen}
+
+% Your bibliography goes here
+{\singlespacing
+ \bibliography{thesis}
+}
+
+% \appendix
+\input{10_appendix}
+
+\end{document}

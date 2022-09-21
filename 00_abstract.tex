@@ -1,0 +1,34 @@
+\begin{abstractzh}
+\setcounter{page}{1}
+
+本研究旨在建立一個用於動態環境的多機器人系統，考慮環境中有動態障礙物的情形下進行定位、避障及導航。基於雙層的導航框架，利用Dijkstra演算法找出全域計畫，再藉由結合人工勢場法與Pure-Pursuit演算法的區域規劃器，找出該時刻控制命令，並引入移動窗口法與障礙物濾波器，以降低於力場中搜尋時陷入區域最小值的可能性，最後加上多機器人間的協調策略，確保機器人相遇時得以化解衝突。系統實現時還需搭配定位與障礙物追蹤系統，本研究採用一感測器特徵擷取系統處理二維光達的資料，並透過延伸型卡爾曼濾波器進行定位。在模擬環境與其他兩個演算法進行比較，本文所提出的系統在17個場景中皆能保持93\%以上的成功率，且所需的計算時間皆在5毫秒以下，同時也在自製的移動機器人平台進行測試，結果表明此系統確實能處理動態環境中的導航問題。
+
+\keywordzh{多機器人系統、定位及避障、導航、機器人作業系統、自主移動機器人}
+
+\end{abstractzh}
+
+
+\begin{abstracten}
+\begin{spacing}{1.5}
+
+This research aims to establish a Multi-Robot System that is suitable for the dynamic environment. Implementing localization, obstacle avoidance, and navigation systems in an environment with dynamic obstacles. Based on the two-layer navigation framework, the Dijkstra algorithm is used to construct the global plan, and then the control command at each moment is created by combining the artificial potential field and the Pure-Pursuit algorithm. The rolling window method and the obstacle filter are also introduced to reduce the possibility of falling into the local minimum of the potential field. A coordination strategy between multi-robot is introduced to ensure the conflicts can be resolved when robots meet. It's also essential that each robot is equipped with the localization and the obstacle tracking system in the proposed system. In this work, an obstacle detection system is used to process the data from 2D-LiDAR, and the Extended Kalman Filter is used for localization. Compared with the other two algorithms in the simulated environment, proposed the system in this research can achieve a success rate of at least 93\% in 17 different scenarios, and the controller execution time is at most 5 milliseconds. Eventually, the proposed methodology is also tested on the self-made multi-robot platform, and the experiment results prove that the system can handle navigation problems in dynamic environment.
+
+\keyworden{Multi-Robot System, Localization and Obstacle Avoidance, Navigation, Robot Operating System, Autonomous Mobile Robot}
+
+\end{spacing}
+\end{abstracten}
+
+% \begin{comment}
+%     \keywords{Object detection, Path planning, Gantry robot, Computer vision, Orchids, Greenhouse, Smart farming, Robot Operation System}
+% \end{comment}
+
+%\begin{comment}
+%\category{I2.10}{Computing Methodologies}{Artificial Intelligence --
+%Vision and Scene Understanding} \category{H5.3}{Information
+%Systems}{Information Interfaces and Presentation (HCI) -- Web-based
+%Interaction.}
+%
+%\terms{Design, Human factors, Performance.}
+%
+%\keywords{Motor control, Path planning, Smart agriculture}
+%\end{comment}

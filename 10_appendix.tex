@@ -1,0 +1,46 @@
+\titlecontents{chapter}% <section-type>
+  [0pt]% <left>
+  {}% <above-code>
+  {\bfseries 附錄\thecontentslabel \quad}% <numbered-entry-format>
+  {\bfseries}% <numberless-entry-format>
+  {\bfseries\hfill\contentspage}% <filler-page-format>
+\appendix
+
+\titleformat{\chapter}
+  {\Large\bfseries\centering}
+  {附錄\,\thechapter}{1em}{\Large}
+  
+\chapter{附錄說明}
+\label{c:appendix_caption}
+
+此處為附錄，若有需要放置一些必要資訊，但又不想放在內文裡面，可以放在這邊。11行以前的東西不要刪掉，是為了定義附錄的格式，在此處每新增一個chapter就會由附錄A開始編號至附錄B等以此類推，我是因為圖表過大因此放在附錄，\cref{table:sim_1_result_sr_subopt_ta}為跨頁表格的範例，基本上與一般表格相同，只是最外面改為sidewaytable而已，若是要使用跨頁圖，則是使用sidewayfigure即可。
+
+\begin{sidewaystable}[htbp]
+\caption{模擬一：不同場景內三種演算法的導航成功率(SR)、次優性與到達時間(TA)之統計量}
+\label{table:sim_1_result_sr_subopt_ta}
+\begin{tabular}{ccccccccccc}
+\hline
+\multicolumn{1}{l}{}  & \multicolumn{1}{l}{} & \multicolumn{3}{c}{APF}                      & \multicolumn{3}{c}{TEB}                      & \multicolumn{3}{c}{DWA}                      \\ \cmidrule(r){3-5} \cmidrule(r){6-8} \cmidrule(r){9-11}
+\multicolumn{1}{l}{}  & \multicolumn{1}{l}{} & SR(\%) & 次優性(\%) & \multicolumn{1}{c}{TA(s)} & SR(\%) & 次優性(\%) & \multicolumn{1}{c}{TA(s)} & SR(\%) & 次優性(\%) & \multicolumn{1}{c}{TA(s)} \\ \hline
+\multirow{2}{*}{簡單-1} & 平均值$^\dagger$          & 100.00 & -1.50   & 5.72                      & 100.00 & 0.37    & 5.87                      & 100.00 & -2.48   & 7.83                      \\
+                      & 標準差                  &        & 0.30    & 0.03                      &        & 0.28    & 0.04                      &        & 0.15    & 0.62                      \\
+\multirow{2}{*}{簡單-2} & 平均值                  & 100.00 & -0.58   & 7.83                      & 100.00 & -0.37   & 6.32                      & 96.67  & 3.28    & 20.31                     \\
+                      & 標準差                  &        & 0.31    & 0.07                      &        & 0.25    & 0.06                      &        & 5.32    & 6.79                      \\
+\multirow{2}{*}{簡單-3} & 平均值                  & 100.00 & -2.41   & 7.67                      & 100.00 & -1.51   & 6.24                      & 100.00 & -2.88   & 13.60                     \\
+                      & 標準差                  &        & 0.49    & 0.06                      &        & 0.24    & 0.06                      &        & 3.88    & 3.76                      \\ \hline
+\multirow{2}{*}{中等-1} & 平均值                  & 100.00 & -1.07   & 11.07                     & 100.00 & -2.08   & 9.58                      & 56.67  & -2.35   & 25.07                     \\
+                      & 標準差                  &        & 0.60    & 0.17                      &        & 4.27    & 0.93                      &        & 7.46    & 4.91                      \\
+\multirow{2}{*}{中等-2} & 平均值                  & 100.00 & 1.28    & 10.52                     & 100.00 & -2.66   & 8.87                      & 23.33  & -1.70   & 29.18                     \\
+                      & 標準差                  &        & 1.43    & 0.10                      &        & 0.27    & 0.08                      &        & 3.06    & 11.48                     \\
+\multirow{2}{*}{中等-3} & 平均值                  & 100.00 & -0.54   & 10.94                     & 100.00 & -2.11   & 9.83                      & 16.67  & -7.65   & 21.16                     \\
+                      & 標準差                  &        & 0.87    & 0.17                      &        & 5.66    & 0.93                      &        & 2.70    & 7.09                      \\ \hline
+\multirow{2}{*}{困難-1} & 平均值                  & 100.00 & -0.05   & 10.39                     & 60.00  & 17.02   & 13.46                     & 0.00   & NaN$^\ddagger$     & \multicolumn{1}{r}{NaN}   \\
+                      & 標準差                  &        & 0.35    & 0.33                      &        & 11.89   & 3.44                      &        & NaN     & \multicolumn{1}{r}{NaN}   \\
+\multirow{2}{*}{困難-2} & 平均值                  & 100.00 & -0.22   & 10.21                     & 96.67  & 0.68    & 9.41                      & 3.33   & 26.46   & 39.34                     \\
+                      & 標準差                  &        & 0.58    & 0.25                      &        & 5.00    & 1.01                      &        & NaN     & \multicolumn{1}{r}{NaN}   \\
+\multirow{2}{*}{困難-3} & 平均值                  & 100.00 & 0.22    & 9.53                      & 100.00 & -1.91   & 8.72                      & 0.00   & NaN     & \multicolumn{1}{r}{NaN}   \\
+                      & 標準差                  &        & 0.31    & 0.10                      &        & 0.51    & 0.13                      &        & NaN     & \multicolumn{1}{r}{NaN}   \\ \hline
+\multicolumn{11}{l}{$^\dagger$~平均值與標準差皆使用樣本平均值與樣本標準差進行估計}\\
+\multicolumn{11}{l}{$^\ddagger$~ NaN表示在該場景的三十組導航結果中，因成功率過低導致無法計算平均值/標準差。}
+\end{tabular}
+\end{sidewaystable}
