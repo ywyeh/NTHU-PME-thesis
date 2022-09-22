@@ -3,6 +3,13 @@
 
 以下文中的$\backslash$皆代表latex中輸入指令的前綴，因直接打反斜線會編譯不過~~。
 
+\section{封面}
+\label{sec:cover}
+
+封面的設定在nthuvars.tex與nthuthesis.cls中，前者是輸入封面頁上的各式文字(標題、姓名等等)，後者則是管理封面的樣式，格式若要更改請自行修改nthuthesis.cls的60-88行。
+
+若用於proposal則將66行註解、67行清除註解，用於碩士論文就是66行清除註解67行註解這樣。
+
 \section{文章架構}
 \label{sec:architecture}
 
@@ -163,9 +170,9 @@ return $\boldsymbol{\bar{\mu}}_t, \boldsymbol{\bar{\Sigma}}_t$
 
 若是ICMEMS的實驗室同學請特別留意：
 \begin{enumerate}[nosep]
-\item \@inproceedings(研討會論文)，老師要求要有舉辦地點與詳細時間，因此可參考thesis.bib中的寫法補上address，範例如下：address={Bangkok, Thailand, December 14 - 17}。
-\item \@online(線上資料)，此格式如\cite{eurobot}所示，請自行參閱thesis.bib中內容。
-\item \@emptymisc(空白的格式)，若喬不好格式可用這個，完全自己打的reference，尤其是當要引用中文文獻時，避免全/半形標點符號混用，範例請見thesis.bib。
+\item @inproceedings(研討會論文)，老師要求要有舉辦地點與詳細時間，因此可參考thesis.bib中的寫法補上address，範例如下：address={Bangkok, Thailand, December 14 - 17}。
+\item @online(線上資料)，此格式如\cite{eurobot}所示，請自行參閱thesis.bib中內容。
+\item @emptymisc(空白的格式)，若喬不好格式可用這個，完全自己打的reference，尤其是當要引用中文文獻時，避免全/半形標點符號混用，範例請見thesis.bib。
 \end{enumerate}
 
 

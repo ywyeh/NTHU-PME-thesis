@@ -20,7 +20,7 @@
 \DeclareRobustCommand{\@classzh}{論文}
 \DeclareRobustCommand{\@planzh}{計劃書}
 \DeclareOption{phd}{\gdef\@typeen{Doctoral}\gdef\@typezh{博士}\gdef\@classen{Dissertation}}
-\DeclareOption{proposal}{\gdef\@typeen{Proposal for Doctoral}\gdef\@typezh{碩士論文計畫提案書}\gdef\@classen{Dissertation}\gdef\@classzh{}}
+\DeclareOption{proposal}{\gdef\@typeen{Proposal for Doctoral}\gdef\@typezh{碩士論文計畫書}\gdef\@classen{Dissertation}\gdef\@classzh{}}
 \DeclareRobustCommand{\@setspacing}{\doublespacing}
 \DeclareOption{singlespacing}{\gdef\@setspacing{\singlespacing}}
 \DeclareOption{onehalfspacing}{\gdef\@setspacing{\onehalfspacing}}
@@ -64,7 +64,7 @@
         \vspace{\fill}
       \makebox[10cm][s]{\textbf{\@universityzh}}\\
       \makebox[5cm][s]{\textbf{\@typezh\@classzh}}
-    %   \makebox[7cm][s]{\textbf{\@typezh\@classzh\@planzh}}
+    %   \makebox[7cm][s]{\textbf{\@typezh\@classzh\@planzh}} % proposal
     \end{center}
     \vspace{\fill}
     \begin{center}
