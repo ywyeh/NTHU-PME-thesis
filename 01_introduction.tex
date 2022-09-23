@@ -107,7 +107,7 @@
 \section{方程式}
 \label{sec:equation}
 
-Latex語法用於打方程式應該是大家最熟悉的了，一樣有許多線上工具可以讓你打得更快，筆者這邊是使用\url{https://latex.codecogs.com/eqneditor/editor.php}協助產生一些少用的指令。也可以參考overleaf的官方文件：\url{https://www.overleaf.com/learn/latex/Mathematical_expressions}，裡面有詳細說明這邊就不贅述，最簡單的就是用$$a+b=c$$這樣，以下是節錄自筆者論文內的方程式，使用align並且在thesis.tex中有設定可讓多個方程式跨頁方便排版。額外補充，\url{https://hackmd.io/@CynthiaChuang/Basic-LaTeX-Commands}這裡有人整理了常用數學符號指令。
+Latex語法用於打方程式應該是大家最熟悉的了，一樣有許多線上工具可以讓你打得更快，筆者這邊是使用\url{https://latex.codecogs.com/eqneditor/editor.php}協助產生一些少用的指令。也可以參考overleaf的官方文件：\url{https://www.overleaf.com/learn/latex/Mathematical_expressions}，裡面有詳細說明這邊就不贅述，最簡單的就是用$a+b=c$這樣，以下是節錄自筆者論文內的方程式，使用align並且在thesis.tex中有設定可讓多個方程式跨頁方便排版。額外補充，\url{https://hackmd.io/@CynthiaChuang/Basic-LaTeX-Commands}這裡有人整理了常用數學符號指令。
 
 \begin{align}
     \label{eqn:predict_mu_tf_zero}
@@ -192,4 +192,4 @@ return $\boldsymbol{\bar{\mu}}_t, \boldsymbol{\bar{\Sigma}}_t$
 
 為了提供高度客製化的內文素材引用格式(迎合老師的奇怪規範)，除了文獻以外的引用，在本範例文件中皆使用cleveref這個套件，在thesis.tex的48-57行筆者依照動機系ICMEMS實驗室的論文規範客製化了chapter、section、subsection、subsubsection、figure、table、equation、algorithm及appendix的格式，其文中引用結果如下所示：
 
-引用章：\cref{c:introduction}、引用節：\cref{sec:architecture}、引用小節：\cref{subsec:subsection}、引用標題列舉(subsubsection)：\cref{subsubsec:subsubsection}、引用圖片：\cref{fig:population_age_world}、引用表格：\cref{table:exp_size}、引用方程式：\cref{eqn:predict_mu_tf_zero}、引用演算法：\cref{algo:ekf_predict}、引用附錄：\cref{c:appendix_caption}。0
+引用章：\cref{c:introduction}、引用節：\cref{sec:architecture}、引用小節：\cref{subsec:subsection}、引用圖片：\cref{fig:population_age_world}、引用表格：\cref{table:exp_size}、引用方程式：\cref{eqn:predict_mu_tf_zero}、引用演算法：\cref{algo:ekf_predict}、引用附錄：\cref{c:appendix_caption}。
