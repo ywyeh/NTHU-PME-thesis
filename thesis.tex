@@ -171,14 +171,14 @@
 \begin{spacing}{1.5}
 \tableofcontents
 
-\newpage
+\clearpage
 % \phantomsection % for hyperref to correct the link
 \addcontentsline{toc}{chapter}{\listfigurename}
 \let\origaddvspace\addvspace
 % remove spacing between every chapter in list of figures and tables
 {\renewcommand{\addvspace}[1]{}\listoffigures}
 
-\newpage
+\clearpage
 % \phantomsection % for hyperref to correct the link
 \addcontentsline{toc}{chapter}{\listtablename}
 {\renewcommand{\addvspace}[1]{}\listoftables}
