@@ -197,3 +197,7 @@ return $\boldsymbol{\bar{\mu}}_t, \boldsymbol{\bar{\Sigma}}_t$
 為了提供高度客製化的內文素材引用格式(迎合老師的奇怪規範)，除了文獻以外的引用，在本範例文件中皆使用cleveref這個套件，在thesis.tex的48-57行筆者依照動機系ICMEMS實驗室的論文規範客製化了chapter、section、subsection、subsubsection、figure、table、equation、algorithm及appendix的格式，其文中引用結果如下所示：
 
 引用章：\cref{c:introduction}、引用節：\cref{sec:architecture}、引用小節：\cref{subsec:subsection}、引用圖片：\cref{fig:population_age_world}、引用表格：\cref{table:exp_size}、引用方程式：\cref{eqn:predict_mu_tf_zero}、引用演算法：\cref{algo:ekf_predict}、引用附錄：\cref{c:appendix_caption}。
+
+\section{超連結}
+
+Latex中可以幫所有引用與網址都加上超連結，僅需將thesis.tex中的48行取消註解，並重新編譯即可，要消除超連結就將48行註解即可。\textcolor{red}{注意：請不要將有超連結的檔案拿去影印店印，會被老闆念喔，因為前面的頁數會變成羅馬數字編號，他們操作時會比較麻煩。}
